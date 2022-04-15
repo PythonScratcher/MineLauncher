@@ -8,15 +8,15 @@
   </p>
 </p>
 
+![Screenshot](https://github.com/PythonScratcher/MineLauncher/raw/master/screenshot.png)
 
 
 
 
-
-## Roadmap
+## Includes:
 [*] AppImage support
 [*] Skin support
-[*] NBT editor
+[*] MCPiEdit
 [ ] Texture packs
 [ ] Mods
 [ ] Chat logging
