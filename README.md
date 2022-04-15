@@ -31,4 +31,3 @@
 Гаечный ключ от [Santoniche на OpenGameArt.org](https://opengameart.org/content/wrench-0).
 
 
-Переведено с помощью www.DeepL.com/Translator (бесплатная версия)
