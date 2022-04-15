@@ -1,6 +1,6 @@
 
 
-  <h3 align="center">MineLauncher</h3>
+  <h1 align="center">MineLauncher</h1>
 
   <p align="center">
     Улучшенная и поддерживаемая программа запуска для Minecraft Pi Edition Reborn.
@@ -10,7 +10,7 @@
 
 ![Screenshot](https://github.com/PythonScratcher/MineLauncher/raw/master/RUscreenshot.png)
 
-
+<h3> Пожалуйста, обратите внимание, что некоторые вещи написаны на английском языке - будьте терпеливы <h3>
 
 
 
