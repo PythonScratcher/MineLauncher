@@ -8,7 +8,7 @@
   </p>
 </p>
 
-![Screenshot](https://github.com/PythonScratcher/MineLauncher/edit/MineLauncher-ru/raw/master/screenshot.png)
+![Screenshot](https://github.com/PythonScratcher/MineLauncher/MineLauncher-ru/raw/master/screenshot.png)
 
 
 
