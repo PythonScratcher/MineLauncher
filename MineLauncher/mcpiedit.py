@@ -26,9 +26,9 @@ if os.path.exists("/usr/lib/MineLauncher/"):
 if not os.path.exists(f"/home/{USER}/.minecraft-pi/games/com.mojang/minecraftWorlds/"):
     os.makedirs(f"/home/{USER}/.minecraft-pi/games/com.mojang/minecraftWorlds/")
 
-GAME_TYPES = {"Survival": nbt.pynbt.TAG_Int(0), "Creative": nbt.pynbt.TAG_Int(1)}
+GAME_TYPES = {"Выживание": nbt.pynbt.TAG_Int(0), "творческий": nbt.pynbt.TAG_Int(1)}
 
-GAME_INTREGERS = {"0": "Survival", "1": "Creative"}
+GAME_INTREGERS = {"0": "Выживание", "1": "творческий"}
 
 BOOLEAN_INTREGERS = {0: False, 1: True}
 BOOLEAN_INTREGERS_REVERSED = {False: 0, True: 1}
@@ -40,14 +40,14 @@ class AboutWindow(QWidget):
 
         layout = QVBoxLayout()
 
-        label = QLabel("About MCPIedit")
+        label = QLabel("О программе MCPIedit")
         label.setAlignment(Qt.AlignHCenter)
         font = label.font()  # Font used
         font.setPointSize(15)  # Set the font size
         label.setFont(font)  # Aplly the font onto the label
 
         desc_label = QLabel(
-            "The default built-in NBT editor for MineLauncher.\n\nMCPIedit makes use of Pi-NBT\n from the original MCPIedit project\nby TheBrokenRail, which is\nlicensed under the MIT license."
+            "Встроенный NBT-редактор по умолчанию для MineLauncher.\n\nMCPIedit использует Pi-NBT\n из оригинального проекта MCPIedit\n от TheBrokenRail, который\nлицензирован под лицензией MIT."
         )
         desc_label.setAlignment(Qt.AlignHCenter)
 
@@ -64,13 +64,13 @@ class FileSelectorTab(QWidget):
         layout = QVBoxLayout()
 
         info_label = QLabel(
-            "NBT editors allow you to edit your world\nfiles to change game modes, time,\nand even the world name all built in!. Select an NBT\nfile to edit using the button below."
+            "MCPIedit использует Pi-NBT редакторы, позволяющие редактировать ваши мировые\nfiles, чтобы изменить режимы игры, время,\nand даже название мира все встроено! Выберите NBT\nfile для редактирования, используя кнопку ниже."
         )
         info_label.setAlignment(Qt.AlignHCenter)
 
-        self.load_button = QPushButton("Select NBT File")
+        self.load_button = QPushButton("Выбрать файл NBT")
 
-        self.about_button = QPushButton("About")
+        self.about_button = QPushButton("О сайте")
         self.about_button.clicked.connect(self.about_window)
 
         layout.addWidget(info_label)
@@ -98,8 +98,8 @@ class EditorTab(QWidget):
         self.tabs.setTabPosition(QTabWidget.West)
         self.tabs.setMovable(True)
 
-        self.tabs.addTab(self.main_tab(), "General")
-        self.tabs.addTab(self.world_tab(), "World")
+        self.tabs.addTab(self.main_tab(), "Общее")
+        self.tabs.addTab(self.world_tab(), "Мир")
 
         self.name_edit.setText(str(self.nbt["LevelName"].value))
         self.timestamp_box.setValue(int(self.nbt["LastPlayed"].value))
@@ -133,36 +133,36 @@ class EditorTab(QWidget):
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("OneChunk")
 
-        self.seed_label = QLabel("World Seed")
+        self.seed_label = QLabel("семя")
 
         self.seed_edit = QLineEdit()
         self.seed_edit.setPlaceholderText("-121542953")
         self.seed_edit.setValidator(QIntValidator())
 
-        self.timestamp_label = QLabel("Last Played Timestamp")
+        self.timestamp_label = QLabel("Временная метка последнего воспроизведения")
 
         self.timestamp_box = QSpinBox()
         self.timestamp_box.setMaximum(2147483647)
 
-        self.game_label = QLabel("Game mode")
+        self.game_label = QLabel("Игровой режим")
 
         self.game_box = QComboBox()
-        self.game_box.addItems(["Survival", "Creative"])
+        self.game_box.addItems(["Выживание", "творческий"])
 
         # self.mobs_toggle = AnimatedToggle(
         #    checked_color="#59b8e0",
         #    pulse_checked_color="#92cee8"
         # )
 
-        self.time_label = QLabel("Time (In Ticks)")
+        self.time_label = QLabel("Время (в тиках)")
 
         self.time_edit = QLineEdit()
         self.time_edit.setPlaceholderText("1770")
         self.time_edit.setValidator(QIntValidator())
 
-        self.back_button = QPushButton("Back")
+        self.back_button = QPushButton("Назад")
 
-        self.save_button = QPushButton("Save")
+        self.save_button = QPushButton("Сохранить")
         self.save_button.clicked.connect(self.save)
 
         layout.addWidget(self.name_label, 0, 0)
@@ -191,37 +191,37 @@ class EditorTab(QWidget):
 
         layout = QGridLayout()
 
-        x_label = QLabel("Spawnpoint X")
+        x_label = QLabel("Точка нереста X")
 
         self.spawn_x_box = QSpinBox()
         self.spawn_x_box.setMinimum(-128)
         self.spawn_x_box.setMaximum(128)
 
-        y_label = QLabel("Spawnpoint Y")
+        y_label = QLabel("Точка нереста Y")
 
         self.spawn_y_box = QSpinBox()
         self.spawn_y_box.setMinimum(-64)
         self.spawn_y_box.setMaximum(64)
 
-        z_label = QLabel("Spawnpoint Z")
+        z_label = QLabel("Точка нереста Z")
 
         self.spawn_z_box = QSpinBox()
         self.spawn_z_box.setMinimum(-128)
         self.spawn_z_box.setMaximum(128)
 
-        player_x_label = QLabel("Player Spawnpoint X")
+        player_x_label = QLabel("Плеер Точка нереста X")
 
         self.player_spawn_x_box = QSpinBox()
         self.player_spawn_x_box.setMinimum(-128)
         self.player_spawn_x_box.setMaximum(128)
 
-        player_y_label = QLabel("Player Spawnpoint Y")
+        player_y_label = QLabel("Плеер Точка нереста Y")
 
         self.player_spawn_y_box = QSpinBox()
         self.player_spawn_y_box.setMinimum(-64)
         self.player_spawn_y_box.setMaximum(64)
 
-        player_z_label = QLabel("Player Spawnpoint Z")
+        player_z_label = QLabel("Плеер Точка нереста Z")
 
         self.player_spawn_z_box = QSpinBox()
         self.player_spawn_z_box.setMinimum(-128)
@@ -236,7 +236,7 @@ class EditorTab(QWidget):
         layout.addWidget(player_z_label, 5, 0)
 
         note_label = QLabel(
-            "Note:\nPlayer spawnpoints are very buggy!\nYou might spawn in the wrong\nplace or even outside the world!\nDo not use on valuable worlds."
+            "Примечание:\nТочки спавна игроков очень глючные!\nВы можете спавниться в неправильном месте или даже за пределами мира!\nНе используйте на ценных мирах."
         )
 
         layout.addWidget(self.spawn_x_box, 0, 1)

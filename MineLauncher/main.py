@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#РУССКИЙ ВАРИАНТ
 """
 
 MineLauncher (Based On Planet) is an improved launcher for Minecraft Pi Edition Reborn, inspired by gMCPIL, jMCPIL, MCPIL and MCPIL-R.
@@ -109,7 +110,7 @@ class ConfigMineWiz(QDialog):
         )
 
         # Create the name label
-        namelabel = QLabel("Mine Installer")
+        namelabel = QLabel("Mine Гаечный ключ")
 
         logolabel = QLabel()  # label used for the logo
         logolabel.setPixmap(logopixmap)  # Load the pixmap into the label
@@ -128,10 +129,10 @@ class ConfigMineWiz(QDialog):
 
         # Label with information
         info_label = QLabel(
-            'Please select the executable you downloaded.\nIf you installed a DEB, please select the "Link" option'
+            'Выберите загруженный исполняемый файл.\nЕсли вы установили DEB, выберите опцию "Ссылка'
         )
 
-        self.executable_btn = QPushButton("Select executable")  # Button for AppImage
+        self.executable_btn = QPushButton("Выбор исполняемого файла")  # Button for AppImage
         self.executable_btn.clicked.connect(
             self.get_appimage
         )  # Connect to the function
@@ -141,7 +142,7 @@ class ConfigMineWiz(QDialog):
         )  # Button for Pre-installed debs
         self.premade_btn.clicked.connect(self.link_appimage)  # Connect to the function
 
-        self.flatpak_btn = QPushButton("Link flatpak")  # Button for linking flatpak
+        self.flatpak_btn = QPushButton("Ссылка flatpak")  # Button for linking flatpak
         self.flatpak_btn.clicked.connect(self.link_flatpak)  # Connect to the function
 
         # Adding things to widgets
@@ -175,7 +176,7 @@ class ConfigMineWiz(QDialog):
         self.hide()  # Hide the dialog
         # Open the file dialog
         self.filename = QFileDialog.getOpenFileName(
-            self, "Select executable", "/", "Executable files (*.AppImage *.bin *.sh *)"
+            self, "Выберите исполняемую программу", "/", "Исполняемые файлы (*.AppImage *.bin *.sh *)"
         )
 
     def link_appimage(self):
@@ -218,7 +219,7 @@ class MineLauncher(QMainWindow):
             RPC.connect()  # Connect to Discord
             # Set the RPC Status
             RPC.update(
-                state="Launched with MineLauncher",
+                state="Запуск с помощью MineLauncher",
                 details="Minecraft Pi Edition Reborn",
                 large_image=random.choice(
                     ["revival", "logo"]
@@ -238,7 +239,7 @@ class MineLauncher(QMainWindow):
 
             # Set the configuration variable
             self.conf = {
-                "username": "StevePi",
+                "username": "СтивPi",
                 "options": launcher.get_features_dict(
                     f"/home/{USER}/.MineLauncher/minecraft.AppImage"
                 ),
@@ -247,7 +248,7 @@ class MineLauncher(QMainWindow):
                 "render_distance": "Short",
                 "theme": theme,
                 "discord_rpc": True,
-                "version": "extended_2.3.2",
+                "version": "extended_2.3.2_RU",
             }
 
             with open(
@@ -274,23 +275,23 @@ class MineLauncher(QMainWindow):
         tabs.setMovable(True)  # Allow tab movement.
 
         # Tab part. Please check every function for more info
-        play_tab = tabs.addTab(self.play_tab(), "Play")  # Add the play tab
+        play_tab = tabs.addTab(self.play_tab(), "Играть")  # Add the play tab
         tabs.setTabIcon(
             play_tab, QIcon(f"{absolute_path}/assets/logo512.png")
         )  # Set the icon for the tab
         features_tab = tabs.addTab(
-            self.features_tab(), "Features"
+            self.features_tab(), "Функции"
         )  # Add the features tab
         tabs.setTabIcon(
             features_tab, QIcon(f"{absolute_path}/assets/heart512.png")
         )  # set the icon for the tab
-        servers_tab = tabs.addTab(self.servers_tab(), "Servers")  # Servers tab
+        servers_tab = tabs.addTab(self.servers_tab(), "Серверы")  # Servers tab
         tabs.setTabIcon(
             servers_tab, QIcon(f"{absolute_path}/assets/portal512.png")
         )  # Set the icon
         # mods_tab = tabs.addTab(self.custom_mods_tab(), "Mods")
         # tabs.setTabIcon(mods_tab, QIcon(f"{absolute_path}/assets/portal512.png"))
-        settings_tab = tabs.addTab(self.settings_tab(), "Settings")  # Changelog tab
+        settings_tab = tabs.addTab(self.settings_tab(), "Настройки")  # Changelog tab
         tabs.setTabIcon(settings_tab, QIcon(f"{absolute_path}/assets/wrench512.png"))
 
         self.layout.addWidget(tabs)
@@ -369,35 +370,35 @@ class MineLauncher(QMainWindow):
         splashlabel.adjustSize()  # Adjust the size just in case
         splashlabel.setAlignment(Qt.AlignHCenter)  # Align the label
 
-        usernamelabel = QLabel("Username")  # Label that is used to direct the line edit
+        usernamelabel = QLabel("Пользователь")  # Label that is used to direct the line edit
 
         self.usernameedit = QLineEdit()  # Line Edit for username
-        self.usernameedit.setPlaceholderText("StevePi")  # Set ghost value
+        self.usernameedit.setPlaceholderText("СтивPi")  # Set ghost value
 
         distancelabel = QLabel(
-            "Render Distance"
+            "Расстояние рендеринга"
         )  # Label that is used to direct the combo box
 
         self.distancebox = QComboBox()
         self.distancebox.addItems(["Far", "Normal", "Short", "Tiny"])  # Set the values
         self.distancebox.setCurrentText("Short")  # Set the default option
 
-        profilelabel = QLabel("Profile")  # Label that is used to direct the combo box
+        profilelabel = QLabel("Профиль")  # Label that is used to direct the combo box
 
         self.profilebox = QComboBox()
         self.profilebox.addItems(
             [
-                "Vanilla MCPi",
-                "Modded MCPi",
-                "Modded MCPE",
-                "Optimized MCPE",
-                "Custom",
+                "Ваниль MCPi",
+                "Измененный MCPi",
+                "Измененный MCPE",
+                "Оптимизировано MCPE",
+                "На заказ",
             ]  # Add  items into the combo box
         )
-        self.profilebox.setCurrentText("Modded MCPE")  # Set the current selection
+        self.profilebox.setCurrentText("Измененный MCPE")  # Set the current selection
 
         self.showlauncher = QRadioButton(
-            "Hide Launcher"
+            "Скрыть запуск"
         )  # RadioButton used for hiding the launcher
 
         self.versionbox = QComboBox()
@@ -417,7 +418,7 @@ class MineLauncher(QMainWindow):
         # self.versionbox.addItems(version_name_list)  # Set the values
         # self.versionbox.setCurrentText("Short")  # Set the default option
 
-        self.playbutton = QPushButton("Play")  # The most powerful button
+        self.playbutton = QPushButton("Играть")  # The most powerful button
 
         self.playbutton.setCheckable(True)  # Allow checking it
         self.playbutton.clicked.connect(
@@ -526,7 +527,7 @@ class MineLauncher(QMainWindow):
             )  # Set the text of the text editing area
 
         infolabel = QLabel(  # Label with information about the server format
-            'Servers are stored in the format of <font color="gold">IP: </font><font color="blue">Port</font>'
+            'Серверы сохраняются в формате <font color="gold">IP: </font><font color="blue">Портал</font>'
         )
 
         layout.addWidget(self.serversedit, 0, 0)  # Add the widgets
