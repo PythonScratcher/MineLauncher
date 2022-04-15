@@ -3,29 +3,32 @@
   <h3 align="center">MineLauncher</h3>
 
   <p align="center">
-    A better, maintained launcher for Minecraft Pi Edition Reborn.
+    Улучшенная и поддерживаемая программа запуска для Minecraft Pi Edition Reborn.
 
   </p>
 </p>
 
-![Screenshot](https://github.com/PythonScratcher/MineLauncher/MineLauncher-ru/raw/master/screenshot.png)
+![Screenshot](https://github.com/PythonScratcher/MineLauncher/raw/master/RUscreenshot.png)
 
 
 
 
 
-## Roadmap
-[*] AppImage support
-[*] Skin support
-[*] NBT editor
-[ ] Texture packs
-[ ] Mods
-[ ] Chat logging
+## Дорожная карта
+[*] Поддержка AppImage
+[*] Поддержка скинов
+[*] Редактор NBT
+[ ] Пакеты текстур
+[ ] Моды
+[ ] Регистрация чата
 [ ] MarketPi
 
 
 
 
-### Additional Credits
-Heart, Planet, Pi, Steve and Portal icons by LEHAtupointow
-Wrench by [Santoniche on OpenGameArt.org](https://opengameart.org/content/wrench-0).
+### Дополнительные кредиты
+Иконки сердца, планеты, Pi, Стива и портала от LEHAtupointow
+Гаечный ключ от [Santoniche на OpenGameArt.org](https://opengameart.org/content/wrench-0).
+
+
+Переведено с помощью www.DeepL.com/Translator (бесплатная версия)
