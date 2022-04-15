@@ -3,7 +3,7 @@
   <h3 align="center">MineLauncher</h3>
 
   <p align="center">
-    A better, maintained launcher for Minecraft Pi Edition Reborn.
+    Лучшая, поддерживаемая программа запуска для Minecraft Pi Edition Reborn.
 
   </p>
 </p>
@@ -13,18 +13,18 @@
 
 
 
-## Includes:
-[*] AppImage support
-[*] Skin support
+## Включает:
+[*] Поддержка AppImage
+[*] Поддержка скинов
 [*] MCPiEdit
-[ ] Texture packs
-[ ] Mods
-[ ] Chat logging
+[ ] Пакеты текстур
+[ ] Моды
+[ ] Регистрация чата
 [ ] MarketPi
 
 
 
 
-### Additional Credits
-Heart, Planet, Pi, Steve and Portal icons by LEHAtupointow
-Wrench by [Santoniche on OpenGameArt.org](https://opengameart.org/content/wrench-0).
+### Дополнительные кредиты
+Иконки Сердца, Планеты, Пи, Стива и Портала - LEHAtupointow
+Гаечный ключ [Santoniche on OpenGameArt.org](https://opengameart.org/content/wrench-0).
